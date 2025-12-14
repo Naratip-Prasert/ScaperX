@@ -31,7 +31,11 @@ const Home: React.FC = () => {
     } catch (err) {
       console.error(err);
       if (axios.isAxiosError(err)) {
-        setError(err.response?.data?.detail || 'An error occurred while searching');
+        setError(
+          typeof err.response?.data?.detail === 'string'
+          ? err.response.data.detail
+          : err.response?.data?.detail?.[0]?.msg || 'An error occurred while searching'
+        );
       } else {
         setError('An unexpected error occurred');
       }

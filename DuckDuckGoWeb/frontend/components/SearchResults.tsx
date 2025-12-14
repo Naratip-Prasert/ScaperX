@@ -22,7 +22,6 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results, searchInfo, load
       </div>
     );
   }
-
   if (error) {
     return (
       <div className="card p-6 border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900/20">
@@ -34,9 +33,9 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results, searchInfo, load
             <h3 className="text-lg font-semibold text-red-800 dark:text-red-200">
               Search Error
             </h3>
-            <p className="text-red-700 dark:text-red-300">
-              {error}
-            </p>
+           <p className="text-red-700 dark:text-red-300">
+              {String(error)}
+           </p>
           </div>
         </div>
       </div>
